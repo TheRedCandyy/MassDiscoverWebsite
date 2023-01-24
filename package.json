@@ -1,7 +1,8 @@
 {
   "dependencies": {
     "express": "^4.18.2",
-    "hbs": "^4.2.0"
+    "hbs": "^4.2.0",
+    "mysql": "^2.18.1"
   },
   "name": "massdiscover",
   "description": "Hello word",
