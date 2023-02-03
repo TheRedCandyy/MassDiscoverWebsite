@@ -17,7 +17,7 @@ hbs.registerPartials(partialsPath);
 app.use(express.static(publicDirectory));
 
 app.get('/', (req, res) => {
-  res.render('helloWorld')
+  res.render('main')
 })
 
 app.listen(port, () => {
