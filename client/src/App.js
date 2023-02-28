@@ -1,6 +1,9 @@
-import React from "react";
+import React from "react"
+import Navbar from "./components/Navbar"
+
 
 function App() {
+  //Example of an api call
   const [data, setData] = React.useState(null);
 
   React.useEffect(() => {
@@ -8,9 +11,12 @@ function App() {
       .then((res) => res.json())
       .then((data) => setData(data.message));
   }, []);
+  //End of example
 
   return (
-    <p>{!data ? "Loading..." : data}</p>
+    <div className="bg-gray-900 text-white min-h-full">
+      <Navbar></Navbar>
+    </div>
   );
 }
 
