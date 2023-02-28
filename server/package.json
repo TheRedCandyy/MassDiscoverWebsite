@@ -1,0 +1,26 @@
+{
+  "name": "massdiscover",
+  "version": "1.0.0",
+  "description": "Mass discover website",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "build": "cd client && npm install && npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TheRedCandyy/MassDiscoverWebsite.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TheRedCandyy/MassDiscoverWebsite/issues"
+  },
+  "homepage": "https://github.com/TheRedCandyy/MassDiscoverWebsite#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "engines": {
+    "node": "18.13.0"
+  }
+}
