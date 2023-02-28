@@ -1,15 +1,20 @@
 {
   "dependencies": {
+    "autoprefixer": "^10.4.13",
     "express": "^4.18.2",
     "hbs": "^4.2.0",
-    "mysql": "^2.18.1"
+    "mysql": "^2.18.1",
+    "postcss": "^8.4.21",
+    "postcss-cli": "^10.1.0"
   },
   "name": "massdiscover",
   "description": "Hello word",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "npm run tailwind:css && node index.js",
+    "tailwind:css": "postcss public/css/tailwind.css -o public/css/style.css"
   },
   "repository": {
     "type": "git",
@@ -20,5 +25,8 @@
   "bugs": {
     "url": "https://github.com/TheRedCandyy/MassDiscoverWebsite/issues"
   },
-  "homepage": "https://github.com/TheRedCandyy/MassDiscoverWebsite#readme"
+  "homepage": "https://github.com/TheRedCandyy/MassDiscoverWebsite#readme",
+  "devDependencies": {
+    "tailwindcss": "^3.2.4"
+  }
 }
