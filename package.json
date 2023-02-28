@@ -13,8 +13,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "npm run tailwind:css && node index.js",
-    "tailwind:css": "postcss public/css/tailwind.css -o public/css/style.css"
+    "start": "node index.js",
+    "tailwind:css": "postcss public/css/tailwind.css -o public/css/style.css --watch"
   },
   "repository": {
     "type": "git",
