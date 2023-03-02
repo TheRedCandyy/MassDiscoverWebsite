@@ -1,6 +1,6 @@
 import React from "react"
 import Navbar from "./components/Navbar"
-import LandingText from "./components/LandingText";
+import LandingText from "./components/LandingText"
 
 
 function App() {
