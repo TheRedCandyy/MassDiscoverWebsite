@@ -1,5 +1,6 @@
 import React from "react"
 import Navbar from "./components/Navbar"
+import LandingText from "./components/LandingText"
 
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
   return (
     <div className="bg-gray-900 text-white min-h-full">
       <Navbar></Navbar>
+      <LandingText></LandingText>
     </div>
   );
 }
