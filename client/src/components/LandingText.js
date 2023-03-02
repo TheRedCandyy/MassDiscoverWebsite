@@ -10,9 +10,9 @@ function LandingText() {
             <p className="sm:mt-8 mt-6">
                 Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
             </p>
-            <form className="sm:mt-8 mt-6">   
+            <form className="sm:mt-8 mt-6">
                 <div class="relative">
-                    <input type="text" id="default-search" class="block w-full px-4 text-sm text-white border border-gray-300 rounded-lg bg-gray-900 focus:ring-white focus:border-white" placeholder="Search domain..."  required />
+                    <input type="text" id="default-search" class="block w-full px-4 text-base text-white border border-gray-300 rounded-lg bg-gray-900 focus:ring-white focus:border-white" placeholder="Search domain..."  required />
                     <button type="submit" class="text-white text-2xl absolute right-0 bottom-0 p-1 px-4 py-2"><BsArrowRight></BsArrowRight></button>
                 </div>
             </form>
