@@ -1,20 +1,21 @@
-const mysql = require('mysql')
+const mysql = require('mysql');
+const CREDENTIALS = require('./credentials');
 
-//TODO Move credentials to CONTANTS file
 const connection = mysql.createConnection({
-  host: 'localhost',
-  user: 'dbuser',
-  password: 's3kreee7',
-  database: 'my_db'
-})
+  host: CREDENTIALS.DB_HOST,
+  user: CREDENTIALS.DB_USER,
+  password: CREDENTIALS.DB_PASSWORD,
+  database: CREDENTIALS.DB_DATABASE
+});
 
-connection.connect()
+connection.connect((err) => {
+  if (err) {
+    console.log(err)
+    return
+  }
+  console.log('Connected to the database');
+});
 
-//Example of db query
-connection.query('SELECT 1 + 1 AS solution', (err, rows, fields) => {
-  if (err) throw err
+// connection.end();
 
-  console.log('The solution is: ', rows[0].solution)
-})
-
-connection.end()
+module.exports = connection;
