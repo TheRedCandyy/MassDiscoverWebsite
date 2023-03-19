@@ -9,3 +9,12 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+@layer utilities {
+  .blue-shadow-mobile {
+    filter: drop-shadow(0rem 0rem 2.5rem #1e40af);
+  }
+  .blue-shadow-desktop {
+    filter: drop-shadow(0rem 0rem 4rem #1e40af);
+  }
+}
