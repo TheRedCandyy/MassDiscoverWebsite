@@ -2,10 +2,13 @@ const path = require('path');
 const express = require('express');
 const connection = require('./db');
 const parse = require('domain-name-parser');
+const rateLimiterUsingThirdParty = require('./middleware/rateLimited').rateLimiterUsingThirdParty;
 
 const PORT = process.env.PORT || 3001;
 
 const app = express();
+
+app.use(rateLimiterUsingThirdParty);
 
 // Have Node serve the files for our built React app
 app.use(express.static(path.resolve(__dirname, '../client/build')));
@@ -31,13 +34,13 @@ app.get("/api/v1/subdomains/domain", (req, res) => {
       console.log("Error: " + error);
       resStatus = "ERROR";
       resCode = 400;
-      resDescription = "An error has ocurred when trying to query!";
+      resDescription = "An error has ocurred when trying to query for parsed domain (" + parsedDomain + ")!";
       resQuery = req.query.domain;
     } else if (rows.length < 1) {
       console.log("No results");
       resStatus = "OK";
       resCode = 200;
-      resDescription = "We couldn't find anything in our database!";
+      resDescription = "We couldn't find anything in our database for parsed domain (" + parsedDomain + ")!";
       resQuery = req.query.domain;
     }else {
       resStatus = "OK";
