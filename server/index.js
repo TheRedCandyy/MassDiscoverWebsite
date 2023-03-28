@@ -22,6 +22,8 @@ app.get("/api/v1/subdomains/domain", (req, res) => {
       code: 400,
       description: "Query string was empty."
     });
+
+    return;
   }
 
   const parsedDomain = parse(unparsedDomain).domainName;
