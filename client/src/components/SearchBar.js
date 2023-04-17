@@ -11,7 +11,9 @@ function SearchBar(props) {
         document.getElementById('loading').classList.add("inline-block");
         document.getElementById('searchForm').classList.add("hidden");
 
-        await fetch("/api/v1/subdomains/domain?domain=test")
+        const textboxInput = document.getElementById('defaultSearch').value;
+
+        await fetch("/api/v1/subdomains/domain?domain=" + textboxInput)
             .then((res) => res.json())
             .then((data) => {document.getElementById('defaultSearch').value = ""; setReqResponse(data)})
             .catch((err) => console.log(err.message));
