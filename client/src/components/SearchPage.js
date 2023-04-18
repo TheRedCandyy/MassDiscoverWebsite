@@ -1,6 +1,7 @@
 import React from "react"
 
-function SearchPage() {
+function SearchPage(props) {
+    console.log(props.reqResponseData)
     return (
         <div className="">
         </div>
