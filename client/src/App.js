@@ -3,6 +3,7 @@ import Navbar from "./components/Navbar"
 import LandingText from "./components/LandingText"
 import MetricsBoxes from "./components/MetricsBoxes";
 import SearchPage from "./components/SearchPage";
+import InfoText from "./components/InfoText";
 
 function App(props) {
   const [reqResponse, setReqResponse] = useState({});
