@@ -3,3 +3,4 @@ node_modules/
 /.package-lock.json
 public/css/style.css
 databasemodel_massdiscover.mwb
+server/credentials.js

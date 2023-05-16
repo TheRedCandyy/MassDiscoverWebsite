@@ -1,9 +1,10 @@
 import React from "react"
+import InfoText from "./InfoText"
 
 function SearchPage(props) {
-    console.log(props.reqResponseData)
     return (
         <div className="">
+            <InfoText reqResponseData={props.reqResponseData}></InfoText>
         </div>
     );
 }
