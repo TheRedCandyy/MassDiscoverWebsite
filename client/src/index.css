@@ -74,3 +74,7 @@ body {
     transform: translate(24px, 0);
   }
 }
+
+.h-75vh {
+  max-height: 75vh
+}
