@@ -4,7 +4,9 @@ import SearchBar from "./SearchBar"
 function LandingText(props) {
     const [reqResponse, setReqResponse] = useState({});
     const resRequestData = (data) => {
-        setReqResponse(data);
+        if (Object.keys(data).length > 0) {
+            setReqResponse(data);
+        }
     };
 
     return (
