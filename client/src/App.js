@@ -8,7 +8,9 @@ import {Helmet, HelmetProvider } from "react-helmet-async";
 function App(props) {
   const [reqResponse, setReqResponse] = useState({});
   const resRequestData = (data) => {
+    if (Object.keys(data).length > 0) {
       setReqResponse(data);
+    }
   };
 
   return (
