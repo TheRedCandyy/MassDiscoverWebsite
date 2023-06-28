@@ -1,4 +1,4 @@
-import React, {useState} from "react"
+import React, {useEffect, useState} from "react"
 import Navbar from "./components/Navbar"
 import LandingText from "./components/LandingText"
 import MetricsBoxes from "./components/MetricsBoxes";
@@ -13,6 +13,19 @@ function App(props) {
     }
   };
 
+  const [reqMetricsResponse, setMetricsResponse] = useState(<MetricsBoxes></MetricsBoxes>);
+
+  const reqMetricsData = async () => {
+    await fetch("/api/v1/metrics")
+      .then((res) => res.json())
+      .then((data) => setMetricsResponse(<MetricsBoxes metricsData={data}></MetricsBoxes>))
+      .catch((err) => console.log(err.message));
+  };
+
+  useEffect(() => {
+    reqMetricsData();
+  }, []);
+
   return (
     <HelmetProvider>
       <div className="bg-zinc-900 text-white flex flex-row min-w-max">
@@ -24,7 +37,7 @@ function App(props) {
         <div className="min-h-screen w-screen">
           <Navbar dataScreen={'landingPage'}></Navbar>
           <LandingText handleResRequestData={resRequestData}></LandingText>
-          <MetricsBoxes></MetricsBoxes>
+          {reqMetricsResponse}
         </div>
         <div className="min-h-screen w-screen">
           <Navbar dataScreen={'searchPage'}></Navbar>

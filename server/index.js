@@ -65,6 +65,31 @@ app.get("/api/v1/subdomains/domain", (req, res) => {
   });
 });
 
+app.get("/api/v1/metrics", (req, res) => {
+  //Query database and populate `query` variable in response
+  let resStatus = "", resCode = null, resTotalDomains = 0, resTotalSubdomains = 0;
+
+  connection.query("SELECT COUNT(*) AS `totalDomains`, (SELECT COUNT(*) FROM subdomain) AS `totalSubdomains` FROM domain", (error, rows) => {
+    if (error) {
+      console.log("Error: " + error);
+      resStatus = "ERROR";
+      resCode = 400;
+    } else {
+      resStatus = "OK";
+      resCode = 200;
+      resTotalDomains = rows[0].totalDomains;
+      resTotalSubdomains = rows[0].totalSubdomains;
+    }
+
+    res.json({
+      status: resStatus,
+      code: resCode,
+      totalDomains: resTotalDomains,
+      totalSubdomains: resTotalSubdomains
+    });
+  });
+});
+
 // Handle POST requests to /api route
 app.post("/api/v1/subdomains", async (req, res) => {
   const domain = req.body.domain;
